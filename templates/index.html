@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plotting Distributions with Flask</title>
+</head>
+<body>
+    <h1>Plotting Distributions with Flask</h1>
+    {% if error %}
+        <p style="color:red;">Invalid distribution type selected</p>
+    {% endif %}
+    <form method="POST">
+        <label for="distribution_type">Distribution Type:</label>
+        <select name="distribution_type" id="distribution_type">
+            <option value="normal">Normal</option>
+            <option value="uniform">Uniform</option>
+            <option value="standard">Standard Normal</option>
+            <option value="exponential">Exponential</option>
+            <option value="poisson">Poisson</option>
+            <option value="gamma">Gamma</option>
+        </select><br><br>
+        <label for="num_samples">Number of Samples:</label>
+        <input type="number" name="num_samples" id="num_samples" min="1" max="100000" value="1000"><br><br>
+        <input type="submit" value="Generate Plot">
+    </form>
+    {% if plot_url %}
+        <img src="{{ plot_url }}" alt="Plot">
+    {% endif %}
+</body>
+</html>

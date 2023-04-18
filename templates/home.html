@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Goodness-of-Fit Chi-Square Test</title>
+  </head>
+  <body>
+    <h1>Select a distribution type:</h1>
+    <form method="POST">
+      <input type="radio" name="distribution_type" value="normal" checked>Normal<br>
+      <input type="radio" name="distribution_type" value="exponential">Exponential<br>
+      <input type="radio" name="distribution_type" value="poisson">Poisson<br>
+      <input type="radio" name="distribution_type" value="gamma">Gamma<br>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+    {% if plot_path %}
+      <h2>{{ distribution_type.capitalize() }} Distribution</h2>
+      <img src="{{ plot_path }}" alt="Histogram and expected distribution plot">
+      <p>Chi-square statistic: {{ chisq_stat }}</p>
+      <p>p-value: {{ p_value }}</p>
+    {% endif %}
+  </body>
+</html>
