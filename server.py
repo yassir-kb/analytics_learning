@@ -3,13 +3,14 @@
 from flask import Flask, render_template, request
 import numpy as np
 import scipy.stats as stats
+from scipy.stats import expon, gamma, norm, poisson
 import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
 # Define routes
 @app.route('/chi_square', methods=['GET', 'POST'])
-def index():
+def chi_square():
     if request.method == 'POST':
         # Get distribution type from form submission
         distribution_type = request.form['distribution_type']
@@ -53,7 +54,7 @@ def index():
         return render_template('chi_square.html')
 
 @app.route('/kolmogorov_smirnov', methods=['GET', 'POST'])
-def index():
+def kolmogorov_smirnov():
     if request.method == 'POST':
         # Get user input
         distribution_type = request.form['distribution_type']

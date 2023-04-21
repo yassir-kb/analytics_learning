@@ -6,7 +6,8 @@ services:
     ports:
       - "5000:5000"
     environment:
-      FLASK_APP: kolmogorov_smirnov.py
+      FLASK_APP: server.py
+      # FLASK_APP: kolmogorov_smirnov.py
       # FLASK_APP: chi_square.py
       FLASK_RUN_HOST: "0.0.0.0"
       FLASK_RUN_PORT: 5000
