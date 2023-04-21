@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistical Analysis Application</title>
+    <style>
+        /* styles pour les boutons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btnn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btnn:hover {
+            background-color: #0062cc;
+        }
+
+        /* styles pour le formulaire */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 24px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<h1>Statistical Analysis Application</h1>
+<form action="/result" method="post">
+    <label for="test_statistique">Statistical Test</label>
+    <select name="test_statistique" id="test_statistique">
+        <option value="distribution">Distribution fitting</option>
+        <option value="t_test">Two-sample problem</option>
+        <option value="correlation_regression">Correlation/Regression</option>
+        <option value="classification">Classification</option>
+    </select>
+
+    <label for="sample_size">Sample size</label>
+    <input type="text" name="sample_size" id="sample_size" placeholder="Entrez la taille de l'échantillon">
+
+    <label for="group_size">Group size (for two-sample tests)</label>
+    <input type="text" name="group_size" id="group_size" placeholder="Entrez la taille du groupe">
+
+    <label for="significance">Meaning of results</label>
+    <select name="significance" id="significance">
+        <option value="significant">Statistically significant</option>
+        <option value="non_significant">Statistically not significant</option>
+        <option value="both">Both results</option>
+    </select>
+</form>
+<a href="http://127.0.0.1:8000">
+    <button type="submit" class="btnn">Analyze Data</button>
+</a>
+
+</body>
+</html>
