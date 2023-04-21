@@ -104,11 +104,11 @@ def index():
         plt.savefig('static/plot.png')
 
         # Render template with plot image and results
-        return render_template('home.html', plot_path='static/plot.png', chisq_stat=chisq_stat, p_value=p_value)
+        return render_template('chi_square.html', plot_path='static/plot.png', chisq_stat=chisq_stat, p_value=p_value)
 
     else:
         # Render initial form
-        return render_template('home.html')
+        return render_template('chi_square.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

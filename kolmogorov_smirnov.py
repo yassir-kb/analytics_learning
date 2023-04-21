@@ -103,11 +103,11 @@ def index():
             plt.savefig('static/plot.png')
 
             # Render template with plot
-            return render_template('index.html', plot_url='static/plot.png')
+            return render_template('kolmogorov_smirnov.html', plot_url='static/plot.png')
         else:
-            return render_template('index.html', error=True)
+            return render_template('kolmogorov_smirnov.html', error=True)
     else:
-        return render_template('index.html')
+        return render_template('kolmogorov_smirnov.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
